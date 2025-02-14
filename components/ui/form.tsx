@@ -10,10 +10,12 @@ import {
   useFormContext,
 } from 'react-hook-form';
 
+import { Label } from '@rock/components/ui/label';
+
+import { cn } from '@rock/lib/utils';
+
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import { Label } from 'ROCK/components/ui/label';
-import { cn } from 'ROCK/lib/utils';
 
 const Form = FormProvider;
 
@@ -136,7 +138,7 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={cn('text-[0.8rem] text-muted-foreground', className)}
+      className={cn('text-muted-foreground text-[0.8rem]', className)}
       {...props}
     />
   );
@@ -158,7 +160,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn('text-[0.8rem] font-medium text-destructive', className)}
+      className={cn('text-destructive text-[0.8rem] font-medium', className)}
       {...props}
     >
       {body}

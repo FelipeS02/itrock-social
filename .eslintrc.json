@@ -19,10 +19,10 @@
       {
         "groups": [
           ["^react", "^next", "^@next"],
-          ["^@?\\w"],
-          ["^@/components/ui", "^@/components", "^@/public"],
-          ["^@/lib", "^@/hooks", "^@/models"],
-          ["^@/"],
+          ["^@rock?\\w"],
+          ["^@rock/components/ui", "^@rock/components", "^@rock/public"],
+          ["^@rock/lib", "^@rock/hooks", "^@rock/models"],
+          ["^@rock/"],
           ["^.+\\.css$"],
           ["^\\."],
           ["^\\u0000"]

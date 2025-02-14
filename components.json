@@ -11,11 +11,11 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "ROCK/components",
-    "utils": "ROCK/lib/utils",
-    "ui": "ROCK/components/ui",
-    "lib": "ROCK/lib",
-    "hooks": "ROCK/hooks"
+    "components": "@rock/components",
+    "utils": "@rock/lib/utils",
+    "ui": "@rock/components/ui",
+    "lib": "@rock/lib",
+    "hooks": "@rock/hooks"
   },
   "iconLibrary": "lucide"
 }
