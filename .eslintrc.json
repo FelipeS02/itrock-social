@@ -1,0 +1,33 @@
+{
+  "ignorePatterns": [
+    ".next/**",
+    "out/**",
+    "dist/**",
+    "build/**",
+    "node_modules/**",
+    "coverage/**",
+    ".cache/**",
+    ".eslintcache",
+    "tailwind.config.ts",
+    ".env*"
+  ],
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^next", "^@next"],
+          ["^@?\\w"],
+          ["^@/components/ui", "^@/components", "^@/public"],
+          ["^@/lib", "^@/hooks", "^@/models"],
+          ["^@/"],
+          ["^.+\\.css$"],
+          ["^\\."],
+          ["^\\u0000"]
+        ]
+      }
+    ]
+  }
+}
