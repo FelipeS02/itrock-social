@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "ROCK/components",
+    "utils": "ROCK/lib/utils",
+    "ui": "ROCK/components/ui",
+    "lib": "ROCK/lib",
+    "hooks": "ROCK/hooks"
+  },
+  "iconLibrary": "lucide"
+}
