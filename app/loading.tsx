@@ -4,8 +4,8 @@ import Logo from './assets/images/logo.webp';
 
 const Loading = () => {
   return (
-    <div className='size-screen'>
-      <div className='grid animate-pulse justify-center space-y-1'>
+    <div className='w-dvw h-svh grid'>
+      <div className='grid animate-pulse justify-center space-y-1 m-auto'>
         <Image
           src={Logo}
           width={500}

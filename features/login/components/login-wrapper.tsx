@@ -9,7 +9,7 @@ const LoginWrapper: FC<HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       className={cn(
-        'grid grid-cols-1 max-md:grid-rows-3 md:grid-cols-2 min-h-full w-full',
+        'grid grid-cols-1 max-md:grid-rows-3 md:grid-cols-2 min-h-svh w-full',
         className,
       )}
       {...rest}
