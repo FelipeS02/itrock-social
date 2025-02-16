@@ -19,10 +19,12 @@ import {
 } from './post-parts/post-parts';
 
 import { MessageSquare, Rocket } from 'lucide-react';
+import { cn } from '@rock/lib/utils';
 
 type BasePostProps = PostType &
   Pick<PostLikeProps, 'liked' | 'onLike'> & {
     asLink?: boolean;
+    className?: string;
   };
 
 /**
@@ -39,11 +41,15 @@ const BasePost: FC<BasePostProps> = ({
   comments,
   date,
   asLink = false,
+  className = '',
 }) => {
   const likesQuantity = likes.length;
 
   return (
-    <Post className='hover:bg-accent transition-colors'>
+    <Post
+      className={cn('data-[link=true]:hover:bg-accent bg-background transition-colors', className)}
+      data-link={asLink}
+    >
       {asLink ? (
         <Link
           href={`/${id}`}

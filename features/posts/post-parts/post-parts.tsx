@@ -192,6 +192,7 @@ const PostComments: FC<PostCommentsProps> = ({
 
 export type PostLikeProps = Omit<HTMLAttributes<HTMLDivElement>, 'id'> &
   Pick<PostType, 'id'> & {
+    /** Post likes */
     likes?: number;
     liked?: boolean;
     onLike?: (postId: number) => void;
