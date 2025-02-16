@@ -92,7 +92,7 @@ type PostTextProps = Pick<PostType, 'text'> &
   HTMLAttributes<HTMLParagraphElement>;
 
 const PostText: FC<PostTextProps> = ({ className = '', text, ...rest }) => (
-  <div className={cn('mt-1 leading-5 break-words', className)} {...rest}>
+  <div className={cn('mt-1 leading-5 break-words font-light', className)} {...rest}>
     <FormattedText text={text} />
   </div>
 );

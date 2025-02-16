@@ -53,7 +53,7 @@ const AccountOptions: FC<AccountOptionsProps> = ({
               <AvatarFallback>{user.username[0]}</AvatarFallback>
             </Avatar>
             <div className='text-left max-md:hidden'>
-              <span className='font-medium'>{user.username}</span>
+              <span>{user.username}</span>
               <RoleBadge className='mt-0.5 py-0 text-xs' {...user.role} />
             </div>
           </div>

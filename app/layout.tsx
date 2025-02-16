@@ -39,7 +39,7 @@ export default function RootLayout({
       <html lang='en'>
         <StoreProvider>
           <body
-            className={`${Poppins.variable} grid min-h-screen max-w-dvw items-center antialiased`}
+            className={`${Poppins.variable} font-poppins grid min-h-screen max-w-dvw items-center antialiased`}
           >
             {children}
           </body>

@@ -2,7 +2,9 @@
 
 import { Skeleton } from '@rock/components/ui/skeleton';
 import NewPostForm from '@rock/components/common/new-post-form';
+import PageHeader from '@rock/components/common/page-header';
 
+import { getGreeting } from '@rock/lib/utils';
 import { useAppSelector } from '@rock/hooks/redux-hooks';
 import { NewPostForm as NewPostFormValues } from '@rock/models/post.model';
 
@@ -49,7 +51,16 @@ const PostsList = () => {
 
   return (
     <>
-      <Post>
+      <PageHeader>
+        <h1 className='text-lg font-medium'>
+          {getGreeting()},{' '}
+          <span style={{ color: user.role.background }}>
+            {user.username.split(' ')[0]}
+          </span>
+        </h1>
+      </PageHeader>
+
+      <Post className='pt-3'>
         <PostAvatar avatar={user.avatar} username={user.username} />
         <PostContent>
           <NewPostForm placeholder='¿Que contás?' cb={onSubmitPost} />

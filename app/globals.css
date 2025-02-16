@@ -93,7 +93,7 @@
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 12 100% 50%;
     --destructive-foreground: 0 0% 98%;
 
     --like: 169 71% 49%;
@@ -121,6 +121,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background font-poppins text-foreground;
+    @apply bg-background text-foreground;
   }
 }
