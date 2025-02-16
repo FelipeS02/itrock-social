@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentProps, FC } from 'react';
+import { ComponentProps, FC, useRef } from 'react';
 import { ImageProps } from 'next/image';
 
 import { cn } from '@rock/lib/utils';
@@ -58,6 +58,8 @@ const NewPostForm: FC<
   buttonText = 'Postear',
   ...rest
 }) => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
   const { form, loading, onSubmit, addFile, removeFile } = useNewPostForm(
     cb,
     props,
@@ -74,9 +76,13 @@ const NewPostForm: FC<
               <FormItem>
                 <FormControl>
                   <Textarea
-                    className={cn('resize-none', className)}
+                    className={cn(
+                      'field-sizing-content h-full resize-none',
+                      className,
+                    )}
                     {...rest}
                     {...field}
+                    ref={textAreaRef}
                   />
                 </FormControl>
                 <FormMessage />
