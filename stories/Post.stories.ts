@@ -1,5 +1,7 @@
-import { BasePost } from '@rock/features/posts/base-post';
 import { mockPosts } from '@rock/lib/mock-posts';
+
+import { BasePost } from '@rock/features/posts/base-post';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof BasePost> = {

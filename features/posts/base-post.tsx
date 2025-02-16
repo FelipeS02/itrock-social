@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Skeleton } from '@rock/components/ui/skeleton';
 
+import { cn } from '@rock/lib/utils';
 import { Post as PostType } from '@rock/models/post.model';
 
 import {
@@ -19,7 +20,6 @@ import {
 } from './post-parts/post-parts';
 
 import { MessageSquare, Rocket } from 'lucide-react';
-import { cn } from '@rock/lib/utils';
 
 type BasePostProps = PostType &
   Pick<PostLikeProps, 'liked' | 'onLike'> & {

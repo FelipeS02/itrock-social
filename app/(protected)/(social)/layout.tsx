@@ -1,7 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import Navigation from '@rock/features/navigation/navigation';
 import PaperBg from '@rock/components/common/paper-bg';
+
+import Navigation from '@rock/features/navigation/navigation';
 
 const SocialsLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
