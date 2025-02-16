@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import Logo from './assets/images/logo.webp';
 
 const Loading = () => {
