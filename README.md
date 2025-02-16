@@ -14,6 +14,7 @@ Algunos de los puntos claves:
 - Posibilidad de dar like a las publicaciones
 - Manteniendo la simplicidad del requerimiento, se creo un sistema de expiracion de sesiones
 - Componentes accesibles construidos en base a shadcn y radix ui
+- Uso de lenis para mejorar la lectura de los posts
 
 A mejorar:
 
