@@ -58,7 +58,7 @@ const BasePost: FC<BasePostProps> = ({
 
         <PostImages images={images} className='mt-3' />
 
-        <PostDate date={date} className='mt-1' />
+        <PostDate date={date} className='mt-2' />
 
         <div className='z-2 flex w-fit gap-4 py-2'>
           {' '}
