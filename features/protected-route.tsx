@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import ROUTES from '@rock/lib/routes';
 import useAuthValidation from '@rock/hooks/use-auth-validation';
 
-export default function ProtectedRoute() {
+const ProtectedRoute: FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
   const isExpirated = !useAuthValidation();
 
@@ -14,5 +14,9 @@ export default function ProtectedRoute() {
     if (isExpirated) router.push(ROUTES.AUTH.LOGIN);
   }, [isExpirated, router]);
 
-  return null;
-}
+  if (isExpirated) return null;
+
+  return <>{children}</>;
+};
+
+export default ProtectedRoute;

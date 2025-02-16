@@ -1,13 +1,13 @@
-import authSlice from './slices/auth.slice';
-import publicationsSlice from './slices/publications.slice';
+import postsSlice from './slices/posts.slice';
+import userSlice from './slices/user.slice';
 
-import {  configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      [authSlice.name]: authSlice.reducer,
-      [publicationsSlice.name]: publicationsSlice.reducer,
+      [userSlice.name]: userSlice.reducer,
+      [postsSlice.name]: postsSlice.reducer,
     },
     devTools: process.env.NODE_ENV === 'development',
   });

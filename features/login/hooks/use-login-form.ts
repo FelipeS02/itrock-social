@@ -2,14 +2,15 @@ import { useCallback, useEffect, useState } from 'react';
 import { useForm, UseFormProps } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
+import { mockUsers } from '@rock/lib/mock-posts';
 import ROUTES from '@rock/lib/routes';
 import { timeout } from '@rock/lib/utils';
 import { useAppDispatch } from '@rock/hooks/redux-hooks';
 import useAuthValidation from '@rock/hooks/use-auth-validation';
-import { AuthState } from '@rock/models/auth-state.model';
 import { User } from '@rock/models/user.model';
+import { UserState } from '@rock/models/user-state.model';
 
-import { login } from '@rock/store/slices/auth.slice';
+import { login } from '@rock/store/slices/user.slice';
 
 import { getExpirationTime } from '../helpers/expiration';
 import { LoginForm } from '../models/login-form.model';
@@ -17,16 +18,18 @@ import { loginFormSchema } from '../schemas/login-form.schema';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const mockUser: User = {
-  email: '',
-  username: 'Felipe Saracho',
-  role: { background: '#FF3201', foreground: '#FAFAFA', name: 'Front-End' },
-  
-};
-
 const mockPassword = 'ITROCK2025';
 
 const EXPIRATION_HOURS = 2;
+
+function getMockUser(email: string): User {
+  const usersList = Object.values(mockUsers);
+
+  const findedUser =
+    usersList.find((user) => user.email === email) ?? mockUsers['felipe'];
+
+  return findedUser;
+}
 
 export default function useLoginForm(
   props: UseFormProps<LoginForm> = {},
@@ -72,7 +75,10 @@ export default function useLoginForm(
 
       const exp = getExpirationTime(EXPIRATION_HOURS);
 
-      const newUser: AuthState = { exp, user: { ...mockUser, email } };
+      const newUser: UserState = {
+        exp,
+        info: getMockUser(email),
+      };
 
       dispatch(login(newUser));
 

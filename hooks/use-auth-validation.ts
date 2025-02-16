@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { isSessionExpirated } from '@rock/lib/auth';
 
-import { logout } from '@rock/store/slices/auth.slice';
+import { logout } from '@rock/store/slices/user.slice';
 
 import { useAppDispatch, useAppSelector } from './redux-hooks';
 
@@ -14,10 +14,10 @@ import { useInterval } from 'usehooks-ts';
  */
 export default function useAuthValidation(ms: number = 10000) {
   const dispatch = useAppDispatch();
-  const expiration = useAppSelector((state) => state.auth.exp);
+  const expiration = useAppSelector((state) => state.user.exp);
 
   const checkExpiration = useCallback(() => {
-    if (isSessionExpirated(expiration)) dispatch(logout());
+    if (expiration && isSessionExpirated(expiration)) dispatch(logout());
   }, [dispatch, expiration]);
 
   // Initial validation

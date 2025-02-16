@@ -1,19 +1,21 @@
-import { AuthState } from '@rock/models/auth-state.model';
+import { UserState } from '@rock/models/user-state.model';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: AuthState = {
+const initialState: UserState = {
   exp: 0,
-  user: {
+  info: {
+    id: 0,
     email: '',
-    role: { background: '', foreground: '', name: '' },
+    avatar: '',
     username: '',
+    role: { background: '', foreground: '', name: '' },
   },
 };
 
 const AUTH_PERSIST_KEY = 'auth';
 
-function loadFromLocalStorage() {
+function loadFromLocalStorage(): UserState {
   if (typeof window === 'undefined') return initialState;
 
   const savedState = localStorage.getItem(AUTH_PERSIST_KEY);
@@ -21,11 +23,11 @@ function loadFromLocalStorage() {
   return savedState ? JSON.parse(savedState) : initialState;
 }
 
-const authSlice = createSlice({
-  name: 'auth',
+const userSlice = createSlice({
+  name: 'user',
   initialState: loadFromLocalStorage(),
   reducers: {
-    login(_, { payload }: PayloadAction<AuthState>) {
+    login(_, { payload }: PayloadAction<UserState>) {
       // Persist data
       localStorage.setItem(AUTH_PERSIST_KEY, JSON.stringify(payload));
 
@@ -40,6 +42,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout } = userSlice.actions;
 
-export default authSlice;
+export default userSlice;

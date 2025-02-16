@@ -1,0 +1,12 @@
+.post {
+  grid-template-areas: 'avatar content';
+  grid-template-columns: auto 1fr;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+.content {
+  grid-area: content;
+}

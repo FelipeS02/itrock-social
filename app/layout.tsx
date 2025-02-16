@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
-import { Roboto as RobotoFont } from 'next/font/google';
+import { Poppins as PoppinsFont } from 'next/font/google';
 
+import { Toaster } from '@rock/components/ui/sonner';
+import LenisProvider from '@rock/components/providers/lenis-provider';
 import StoreProvider from '@rock/components/providers/store-provider';
 
 import './globals.css';
 
 import OgImage from './assets/images/og_image.webp';
 
-const Roboto = RobotoFont({
+const Poppins = PoppinsFont({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-roboto',
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -29,19 +31,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  auth,
 }: Readonly<{
   children: React.ReactNode;
-  auth: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <StoreProvider>
-        <body className={`${Roboto.variable} h-screen w-dvw antialiased`}>
-          {auth}
-          {children}
-        </body>
-      </StoreProvider>
-    </html>
+    <LenisProvider>
+      <html lang='en'>
+        <StoreProvider>
+          <body
+            className={`${Poppins.variable} grid min-h-screen max-w-dvw items-center antialiased`}
+          >
+            {children}
+          </body>
+          <Toaster richColors />
+        </StoreProvider>
+      </html>
+    </LenisProvider>
   );
 }
