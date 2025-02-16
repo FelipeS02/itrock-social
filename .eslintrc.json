@@ -11,21 +11,49 @@
     "tailwind.config.ts",
     ".env*"
   ],
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "plugins": ["simple-import-sort"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
   "rules": {
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
-          ["^react", "^next", "^@next"],
-          ["^@rock?\\w"],
-          ["^@rock/components/ui", "^@rock/components", "^@rock/public"],
-          ["^@rock/lib", "^@rock/hooks", "^@rock/models"],
-          ["^@rock/"],
-          ["^.+\\.css$"],
-          ["^\\."],
-          ["^\\u0000"]
+          [
+            "^react",
+            "^next",
+            "^@next"
+          ],
+          [
+            "^@rock?\\w"
+          ],
+          [
+            "^@rock/components/ui",
+            "^@rock/components",
+            "^@rock/public"
+          ],
+          [
+            "^@rock/lib",
+            "^@rock/hooks",
+            "^@rock/models"
+          ],
+          [
+            "^@rock/"
+          ],
+          [
+            "^.+\\.css$"
+          ],
+          [
+            "^\\."
+          ],
+          [
+            "^\\u0000"
+          ]
         ]
       }
     ]
