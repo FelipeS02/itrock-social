@@ -26,7 +26,7 @@ const Post: FC<HTMLAttributes<HTMLDivElement>> = ({
   return (
     <article
       className={cn(
-        'relative grid h-fit w-full gap-3 border-b px-4 py-6 pb-2 last:border-0',
+        'relative grid h-fit w-full max-w-[800px] gap-3 border-b px-4 py-6 pb-2 last:border-0',
         styles.post,
         className,
       )}
@@ -92,7 +92,10 @@ type PostTextProps = Pick<PostType, 'text'> &
   HTMLAttributes<HTMLParagraphElement>;
 
 const PostText: FC<PostTextProps> = ({ className = '', text, ...rest }) => (
-  <div className={cn('mt-1 leading-5 break-words font-light', className)} {...rest}>
+  <div
+    className={cn('mt-1 leading-5 font-light break-words', className)}
+    {...rest}
+  >
     <FormattedText text={text} />
   </div>
 );
