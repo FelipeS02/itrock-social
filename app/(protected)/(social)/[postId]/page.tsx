@@ -60,7 +60,7 @@ export default function Page() {
 
   return (
     <PostsWrapper className='flex flex-col'>
-      <PageHeader className='px-0'>
+      <PageHeader className='px-0 sticky top-0 bg-background z-10' >
         <Button variant='link' onClick={router.back}>
           <ArrowLeft />
         </Button>
