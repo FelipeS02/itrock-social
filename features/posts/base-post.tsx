@@ -47,7 +47,10 @@ const BasePost: FC<BasePostProps> = ({
 
   return (
     <Post
-      className={cn('data-[link=true]:hover:bg-accent bg-background transition-colors', className)}
+      className={cn(
+        'data-[link=true]:hover:bg-accent/50 transition-colors',
+        className,
+      )}
       data-link={asLink}
     >
       {asLink ? (

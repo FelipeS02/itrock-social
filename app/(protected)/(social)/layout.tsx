@@ -1,10 +1,12 @@
 import { FC, ReactNode } from 'react';
 
 import Navigation from '@rock/features/navigation/navigation';
+import PaperBg from '@rock/components/common/paper-bg';
 
 const SocialsLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className='flex size-full max-md:flex-col'>
+      <PaperBg />
       <Navigation className='sticky top-0 h-screen max-md:hidden' />
 
       {children}
