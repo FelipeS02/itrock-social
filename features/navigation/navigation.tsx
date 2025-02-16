@@ -75,13 +75,13 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement> & { mobile?: boolean }> = ({
   return (
     <aside
       className={cn(
-        'flex flex-col items-start justify-between gap-2 border-r py-4 pb-2',
+        ' flex flex-col items-start justify-between gap-2  py-4 pb-2',
         className,
       )}
     >
       <div className='w-full space-y-6'>
         <Image src={Logo} alt='itrock-logo' className='mx-4 max-w-36' />
-        <div className='flex flex-col'>
+        <div className='flex flex-col relative'>
           <NavigationOptions className='w-full justify-start py-6 text-lg [&>svg]:size-6' />
         </div>
       </div>
