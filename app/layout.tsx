@@ -36,16 +36,14 @@ export default function RootLayout({
 }>) {
   return (
     <LenisProvider>
-      <StoreProvider>
-        <html lang='en'>
-          <body
-            className={`${Poppins.variable} font-poppins grid min-h-dvh max-w-dvw items-center antialiased`}
-          >
-            {children}
-            <Toaster richColors />
-          </body>
-        </html>
-      </StoreProvider>
+      <html lang='en'>
+        <body
+          className={`${Poppins.variable} font-poppins grid min-h-dvh max-w-dvw items-center antialiased`}
+        >
+          <StoreProvider>{children}</StoreProvider>
+          <Toaster richColors />
+        </body>
+      </html>
     </LenisProvider>
   );
 }
