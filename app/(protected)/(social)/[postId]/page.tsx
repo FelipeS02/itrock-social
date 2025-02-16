@@ -45,7 +45,12 @@ export default function Page() {
     return list.find((post) => post.id === Number(postId));
   }, [postId, list]);
 
-  if (!post) return <BasePostSkeleton />;
+  if (!post)
+    return (
+      <PostsWrapper>
+        <BasePostSkeleton />
+      </PostsWrapper>
+    );
 
   const userHasLikedPost =
     post.likes.findIndex((like) => like.id === user.id) > -1;
@@ -60,7 +65,7 @@ export default function Page() {
 
   return (
     <PostsWrapper className='flex flex-col'>
-      <PageHeader className='px-0 sticky top-0 bg-background z-10' >
+      <PageHeader className='bg-background sticky top-0 z-10 px-0'>
         <Button variant='link' onClick={router.back}>
           <ArrowLeft />
         </Button>
