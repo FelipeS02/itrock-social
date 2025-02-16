@@ -14,7 +14,7 @@ export function timeout(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const deleteFromIndex = (arr: unknown[], index: number) => [
+export const deleteFromIndex = <T>(arr: T[], index: number) => [
   ...arr.slice(0, index),
   ...arr.slice(index + 1),
 ];

@@ -91,8 +91,10 @@ const postsSlice = createSlice({
         return;
       }
 
-      const newState = deleteFromIndex(
-        state.list[postIndex].likes,
+      const likes = state.list[postIndex].likes
+
+      const newState = deleteFromIndex<typeof likes[0]>(
+        likes,
         userLikeIndex,
       );
 
