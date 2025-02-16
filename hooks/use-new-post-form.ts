@@ -40,7 +40,7 @@ export default function useNewPostForm(
 
       await cb(values);
 
-      form.reset()
+      form.reset();
     } catch (error) {
       console.log(error);
     } finally {
@@ -53,14 +53,21 @@ export default function useNewPostForm(
 
     const file = e.target.files[0];
 
+    const currentFiles = form.getValues('images') ?? [];
+
+    if (currentFiles.length > 3) {
+      toast.error('Maximo de fotos alcanzado', {
+        position: 'top-center',
+      });
+      return;
+    }
+
     if (!checkFileType(file, VALID_POST_IMG_TYPES)) {
       toast.error('Tipo de archivo no admitido', {
         position: 'top-center',
       });
       return;
     }
-
-    const currentFiles = form.getValues('images') ?? [];
 
     const newFilePreview = URL.createObjectURL(file);
 
