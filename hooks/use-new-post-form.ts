@@ -49,10 +49,6 @@ export default function useNewPostForm(
   }
 
   function addFile(e: ChangeEvent<HTMLInputElement>) {
-    if (!e.target.files) throw Error('Input must be of type file');
-
-    const file = e.target.files[0];
-
     const currentFiles = form.getValues('images') ?? [];
 
     if (currentFiles.length > 3) {
@@ -61,6 +57,10 @@ export default function useNewPostForm(
       });
       return;
     }
+    
+    if (!e.target.files) throw Error('Input must be of type file');
+
+    const file = e.target.files[0];
 
     if (!checkFileType(file, VALID_POST_IMG_TYPES)) {
       toast.error('Tipo de archivo no admitido', {
