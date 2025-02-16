@@ -8,7 +8,7 @@ const PostsWrapper: FC<HTMLAttributes<HTMLDivElement>> = ({
 }) => {
   return (
     <main
-      className={cn('m-auto flex flex-col h-full w-full max-w-[800px] border-x', className)}
+      className={cn('m-auto flex flex-col h-full w-full max-w-[800px] border-x bg-background', className)}
       {...rest}
     />
   );

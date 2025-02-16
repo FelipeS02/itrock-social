@@ -75,7 +75,7 @@ const Navigation: FC<HTMLAttributes<HTMLDivElement> & { mobile?: boolean }> = ({
   return (
     <aside
       className={cn(
-        'flex flex-col items-start justify-between gap-2 border-r py-4 pb-2 bg-background',
+        'flex flex-col items-start justify-between gap-2 border-r py-4 pb-2',
         className,
       )}
     >
