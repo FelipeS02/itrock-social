@@ -1,7 +1,10 @@
 'use client';
 
 import { Skeleton } from '@rock/components/ui/skeleton';
-import NewPostForm from '@rock/components/common/new-post-form';
+import {
+  NewPostForm,
+  NewPostFormSkeleton,
+} from '@rock/components/common/new-post-form';
 import PageHeader from '@rock/components/common/page-header';
 
 import { getGreeting } from '@rock/lib/utils';
@@ -13,8 +16,6 @@ import { createPost, likePost } from '@rock/store/slices/posts.slice';
 import { BasePost, BasePostSkeleton } from './base-post';
 import usePosts from './hooks/use-posts';
 import { Post, PostAvatar, PostContent } from './post-parts/post-parts';
-
-import { ImagePlus } from 'lucide-react';
 
 const PostsList = () => {
   const user = useAppSelector((state) => state.user.info);
@@ -34,12 +35,7 @@ const PostsList = () => {
         <Post>
           <Skeleton className='size-10 rounded-full' />
           <PostContent>
-            <Skeleton className='h-[60px]' />
-            <div className='mt-1.5 inline-flex w-full justify-between'>
-              <ImagePlus className='text-primary/10 size-4' />
-
-              <Skeleton className='h-9 w-22' />
-            </div>
+            <NewPostFormSkeleton />
           </PostContent>
         </Post>
         <BasePostSkeleton />

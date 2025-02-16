@@ -23,6 +23,7 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
+import { Skeleton } from '../ui/skeleton';
 import { Textarea } from '../ui/textarea';
 
 import { ImagePlus, Trash } from 'lucide-react';
@@ -47,6 +48,17 @@ const PreviewImage: FC<
     </div>
   );
 };
+
+const NewPostFormSkeleton = () => (
+  <div className='w-full'>
+    <Skeleton className='h-[60px]' />
+    <div className='mt-1.5 inline-flex w-full justify-between'>
+      <ImagePlus className='text-primary/10 size-4' />
+
+      <Skeleton className='h-9 w-22' />
+    </div>
+  </div>
+);
 
 const NewPostForm: FC<
   UseNewPostFormProps &
@@ -149,4 +161,4 @@ const NewPostForm: FC<
   );
 };
 
-export default NewPostForm;
+export {NewPostForm, NewPostFormSkeleton}
