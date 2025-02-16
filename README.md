@@ -15,6 +15,7 @@ Algunos de los puntos claves:
 - Manteniendo la simplicidad del requerimiento, se creo un sistema de expiracion de sesiones
 - Componentes accesibles construidos en base a shadcn y radix ui
 - Uso de lenis para mejorar la lectura de los posts
+- Creacion de store siguiendo los patrones recomendados por redux-toolkit realizando la persitencia de forma manual
 
 A mejorar:
 
@@ -49,3 +50,7 @@ bun storybook
 Para iniciar sesion, se puede utilizar cualquier e-mail con el dominio "itrocksweb.com", aunque, los listados dentro del archivo "mock-posts.ts" contienen elementos personalizados para cada uno de ellos
 
 contraseña: ITROCK2025
+
+## Deploy
+
+El deploy fue realizado de manera sencilla con el flujo proporcionado por la plataforma de vercel
