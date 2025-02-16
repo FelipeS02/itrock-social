@@ -11,7 +11,8 @@ import useNewPostForm, {
 import {
   PostImage,
   PostImagesWrapper,
-} from '../features/posts/post-parts/post-parts';
+} from '@rock/features/posts/post-parts/post-parts';
+
 import { Button } from '../ui/button';
 import {
   Form,
@@ -48,7 +49,8 @@ const PreviewImage: FC<
 };
 
 const NewPostForm: FC<
-  UseNewPostFormProps & ComponentProps<typeof Textarea> & { buttonText?: string }
+  UseNewPostFormProps &
+    ComponentProps<typeof Textarea> & { buttonText?: string }
 > = ({
   cb = () => undefined,
   props = {},
@@ -100,7 +102,12 @@ const NewPostForm: FC<
                           onChange={addFile}
                         />
                       </FormControl>
-                      <Button className='-ml-2' asChild variant='ghost' size='icon'>
+                      <Button
+                        className='-ml-2'
+                        asChild
+                        variant='ghost'
+                        size='icon'
+                      >
                         <Label htmlFor='post-pictures'>
                           <ImagePlus />
                         </Label>
