@@ -1,8 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Sobre la solucion
 
-## Getting Started
+En este proyecto busqué crear una red social exclusiva para los trabajadores de ITROCK, donde mi objetivo es expresar la vision artistica de la marca a traves de los diferentes elementos de la interfaz (colores, bordes en punta, background visual de papel, etc.)
 
-First, run the development server:
+Algunos de los puntos claves:
+
+- Construccion de requerimientos aplicando Clean Architecture y SOLID
+- Creacion del diseño en [Figma](https://www.figma.com/design/xw89dGWQxuN3TRKjtQ0oRA/ITROCK-Social-media?node-id=0-1&p=f&t=SmrNK91yKoclYHUy-0)
+- Configuracion de elementos SEO para posicionamiento de la aplicacion
+- Prettier configurado para funcionar con clases de TailwindCSS
+- Eslint con reglas establecidas para respetar un orden especifico de imports (ver .eslintrc.json)
+- Uso de zod para validar estructura de objetos y formularios
+- Posibilidad de crear posts y comentarios con imagenes
+- Posibilidad de dar like a las publicaciones
+- Manteniendo la simplicidad del requerimiento, se creo un sistema de expiracion de sesiones
+- Componentes accesibles construidos en base a shadcn y radix ui
+
+A mejorar:
+
+- Documentacion de componentes en storybook
+
+## Iniciar el proyecto
 
 ```bash
 npm run dev
@@ -14,23 +31,20 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Storybook
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+# or
+yarn storybook
+# or
+pnpm storybook
+# or
+bun storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Inicio de sesion
 
-## Learn More
+Para iniciar sesion, se puede utilizar cualquier e-mail con el dominio "itrocksweb.com", aunque, los listados dentro del archivo "mock-posts.ts" contienen elementos personalizados para cada uno de ellos
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+contraseña: ITROCK2025
