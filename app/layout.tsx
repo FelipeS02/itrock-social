@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import { Poppins as PoppinsFont } from 'next/font/google';
 
 import { Toaster } from '@rock/components/ui/sonner';
-import { Analytics } from '@vercel/analytics/react';
 import LenisProvider from '@rock/components/providers/lenis-provider';
 import StoreProvider from '@rock/components/providers/store-provider';
 
 import './globals.css';
 
 import OgImage from './assets/images/og_image.webp';
+
+import { Analytics } from '@vercel/analytics/react';
 
 const Poppins = PoppinsFont({
   subsets: ['latin'],
