@@ -38,7 +38,6 @@ const LoginForm: FC<HTMLAttributes<HTMLFormElement>> = ({
         className={cn('space-y-5', className)}
         {...rest}
       >
-
         <FormField
           control={form.control}
           name='email'
@@ -46,7 +45,7 @@ const LoginForm: FC<HTMLAttributes<HTMLFormElement>> = ({
             <FormItem>
               <FormLabel>Email corporativo</FormLabel>
               <FormControl>
-                <Input placeholder='felipesaracho@itrocksweb.com' {...field} />
+                <Input type='email' placeholder='felipesaracho@itrocksweb.com' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

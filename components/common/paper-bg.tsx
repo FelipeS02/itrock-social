@@ -17,10 +17,20 @@ const PaperBg = () => {
           muted
           autoPlay
           loop
-          src='https://static.vecteezy.com/system/resources/previews/049/962/577/mp4/black-dirty-background-animation-overlay-free-video.mp4'
+          playsInline
+          poster='https://static.vecteezy.com/system/resources/thumbnails/049/962/577/large/black-dirty-background-animation-overlay-free-video.jpg'
           className='aspect-video size-full object-cover'
           ref={ref}
-        />
+        >
+          <source
+            src='https://static.vecteezy.com/system/resources/previews/049/962/577/mp4/black-dirty-background-animation-overlay-free-video.mp4'
+            type='video/mp4'
+          />
+          <source
+            src='https://static.vecteezy.com/system/resources/previews/049/962/577/black-dirty-background-animation-overlay-free-video.webm'
+            type='video/webm'
+          />
+        </video>
       </div>
     </Suspense>
   );
