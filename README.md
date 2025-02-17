@@ -16,6 +16,7 @@ Algunos de los puntos claves:
 - Componentes accesibles construidos en base a shadcn y radix ui
 - Uso de lenis para mejorar la lectura de los posts
 - Creacion de store siguiendo los patrones recomendados por redux-toolkit realizando la persitencia de forma manual
+- Analiticas de Vercel para visualizar rendimiento y actividad dentro de la pagina
 
 A mejorar:
 

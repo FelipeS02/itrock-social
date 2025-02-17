@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins as PoppinsFont } from 'next/font/google';
 
 import { Toaster } from '@rock/components/ui/sonner';
+import { Analytics } from '@vercel/analytics/react';
 import LenisProvider from '@rock/components/providers/lenis-provider';
 import StoreProvider from '@rock/components/providers/store-provider';
 
@@ -41,6 +42,7 @@ export default function RootLayout({
           className={`${Poppins.variable} font-poppins grid min-h-dvh max-w-dvw items-center antialiased`}
         >
           <StoreProvider>{children}</StoreProvider>
+          <Analytics />
           <Toaster richColors />
         </body>
       </html>
