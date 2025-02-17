@@ -46,7 +46,7 @@ const AccountOptions: FC<AccountOptionsProps> = ({
   return (
     <DropdownMenu {...containerProps}>
       <DropdownMenuTrigger asChild {...triggerProps}>
-        <Button variant='ghost' className='h-fit justify-between gap-10'>
+        <Button variant='ghost' className='h-fit justify-between gap-10 w-full'>
           <div className='inline-flex items-center gap-2'>
             <Avatar className='max-md:size-8'>
               <AvatarImage src={user.avatar} />
