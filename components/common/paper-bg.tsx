@@ -26,10 +26,6 @@ const PaperBg = () => {
             src='https://static.vecteezy.com/system/resources/previews/049/962/577/mp4/black-dirty-background-animation-overlay-free-video.mp4'
             type='video/mp4'
           />
-          <source
-            src='https://static.vecteezy.com/system/resources/previews/049/962/577/black-dirty-background-animation-overlay-free-video.webm'
-            type='video/webm'
-          />
         </video>
       </div>
     </Suspense>
