@@ -16,9 +16,11 @@ export default function useAuthValidation(ms: number = 10000) {
   const dispatch = useAppDispatch();
   const expiration = useAppSelector((state) => state.user.exp);
 
+  const expirated = expiration ? isSessionExpirated(expiration) : true;
+
   const checkExpiration = useCallback(() => {
-    if (expiration && isSessionExpirated(expiration)) dispatch(logout());
-  }, [dispatch, expiration]);
+    if (expirated) dispatch(logout());
+  }, [dispatch, expirated]);
 
   // Initial validation
   useEffect(checkExpiration, [checkExpiration]);
@@ -26,5 +28,5 @@ export default function useAuthValidation(ms: number = 10000) {
   // If access token exists revalidate (every 10 seconds by default)
   useInterval(checkExpiration, expiration > 0 ? ms : null); // Null to cancel interval
 
-  return expiration;
+  return { expiration, expirated };
 }

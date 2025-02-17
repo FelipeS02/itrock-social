@@ -35,7 +35,7 @@ export default function useLoginForm(
   props: UseFormProps<LoginForm> = {},
   redirect = ROUTES.FEED.HOME,
 ) {
-  const sessionExists = !!useAuthValidation();
+  const { expirated } = useAuthValidation();
 
   const [loading, setLoading] = useState(false);
 
@@ -93,8 +93,8 @@ export default function useLoginForm(
   }
 
   useEffect(() => {
-    if (sessionExists) handleRedirect();
-  }, [handleRedirect, sessionExists]);
+    if (!expirated) handleRedirect();
+  }, [handleRedirect, expirated]);
 
   return { form, onSubmit, loading };
 }

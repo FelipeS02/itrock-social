@@ -8,13 +8,13 @@ import useAuthValidation from '@rock/hooks/use-auth-validation';
 
 const ProtectedRoute: FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
-  const isExpirated = !useAuthValidation();
+  const { expirated } = useAuthValidation();
 
   useEffect(() => {
-    if (isExpirated) router.push(ROUTES.AUTH.LOGIN);
-  }, [isExpirated, router]);
+    if (expirated) router.push(ROUTES.AUTH.LOGIN);
+  }, [expirated, router]);
 
-  if (isExpirated) return null;
+  if (expirated) return null;
 
   return <>{children}</>;
 };
