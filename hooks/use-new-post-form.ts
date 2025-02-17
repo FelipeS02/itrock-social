@@ -17,6 +17,8 @@ export type UseNewPostFormProps = {
   props?: UseFormProps<NewPostForm>;
 };
 
+export const MAX_POST_IMAGES = 4;
+
 export default function useNewPostForm(
   cb: UseNewPostFormProps['cb'],
   props: UseNewPostFormProps['props'] = {},
@@ -51,13 +53,13 @@ export default function useNewPostForm(
   function addFile(e: ChangeEvent<HTMLInputElement>) {
     const currentFiles = form.getValues('images') ?? [];
 
-    if (currentFiles.length > 3) {
+    if (currentFiles.length === MAX_POST_IMAGES) {
       toast.error('Maximo de fotos alcanzado', {
         position: 'top-center',
       });
       return;
     }
-    
+
     if (!e.target.files) throw Error('Input must be of type file');
 
     const file = e.target.files[0];

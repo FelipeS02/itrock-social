@@ -5,6 +5,7 @@ import { ImageProps } from 'next/image';
 
 import { cn } from '@rock/lib/utils';
 import useNewPostForm, {
+  MAX_POST_IMAGES,
   UseNewPostFormProps,
 } from '@rock/hooks/use-new-post-form';
 
@@ -108,16 +109,21 @@ const NewPostForm: FC<
             render={({ field }) => {
               const images = field.value;
 
+              const disableUpload = images.length === MAX_POST_IMAGES;
+
               return (
                 <>
                   <div className='inline-flex w-full justify-between py-2'>
-                    <FormItem>
+                    <FormItem
+                      
+                    >
                       <FormControl>
                         <Input
                           id='post-pictures'
                           type='file'
                           className='hidden'
                           onChange={addFile}
+                          disabled={disableUpload}
                         />
                       </FormControl>
                       <Button
@@ -126,7 +132,11 @@ const NewPostForm: FC<
                         variant='ghost'
                         size='icon'
                       >
-                        <Label htmlFor='post-pictures'>
+                        <Label
+                          htmlFor='post-pictures'
+                          aria-disabled={disableUpload}
+                          className='aria-disabled:cursor-not-allowed aria-disabled:hover:bg-transparent aria-disabled:opacity-70'
+                        >
                           <ImagePlus />
                         </Label>
                       </Button>
