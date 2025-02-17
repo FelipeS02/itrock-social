@@ -4,7 +4,10 @@ import { useMemo } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 
 import { Button } from '@rock/components/ui/button';
-import { NewPostForm, NewPostFormSkeleton } from '@rock/components/common/new-post-form';
+import {
+  NewPostForm,
+  NewPostFormSkeleton,
+} from '@rock/components/common/new-post-form';
 import PageHeader from '@rock/components/common/page-header';
 
 import { useAppDispatch, useAppSelector } from '@rock/hooks/redux-hooks';

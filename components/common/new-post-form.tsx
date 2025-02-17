@@ -26,7 +26,7 @@ import { Label } from '../ui/label';
 import { Skeleton } from '../ui/skeleton';
 import { Textarea } from '../ui/textarea';
 
-import { ImagePlus, Trash } from 'lucide-react';
+import { ImagePlus, Trash2 } from 'lucide-react';
 
 const PreviewImage: FC<
   Omit<ImageProps, 'src'> & { onDelete?: (src: string) => void; src: string }
@@ -34,15 +34,15 @@ const PreviewImage: FC<
   return (
     <div className='group relative'>
       <PostImage src={src} {...rest} />
-      <div className='bg-background/10 absolute top-0 flex size-full opacity-0 backdrop-blur-xs transition-opacity group-hover:opacity-100'>
+      <div className='bg-background/10 absolute top-0 flex size-full transition-opacity group-hover:opacity-100 md:opacity-0 md:backdrop-blur-xs'>
         <Button
           type='button'
           variant='ghost'
           size='icon'
-          className='[&_svg]:fill-foreground m-auto [&_svg]:size-8'
+          className='m-auto [&_svg]:size-8'
           onClick={() => onDelete(src)}
         >
-          <Trash />
+          <Trash2 />
         </Button>
       </div>
     </div>
@@ -140,7 +140,10 @@ const NewPostForm: FC<
                     </Button>
                   </div>
                   {images?.length ? (
-                    <PostImagesWrapper quantity={images?.length ?? 1}>
+                    <PostImagesWrapper
+                      className='max-md:h-20 max-md:grid-cols-4 max-md:grid-rows-1 max-md:gap-3 max-md:border-none max-md:bg-transparent'
+                      quantity={images?.length ?? 1}
+                    >
                       {images.map((image, i) => (
                         <PreviewImage
                           src={image}
@@ -161,4 +164,4 @@ const NewPostForm: FC<
   );
 };
 
-export {NewPostForm, NewPostFormSkeleton}
+export { NewPostForm, NewPostFormSkeleton };
